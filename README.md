@@ -21,7 +21,7 @@ Cloning the repository to an offline local workstation links the native, multith
    ```bash
    java Server
    ```
-5. Launch your web browser interface window and surf directly to: `http://127.0.0.1:8000`
+** COME CHECK IT OUT IN:** 
 
 ## 🛡️ Digital Security Core Features
 * **Cryptographic Block Assurance**: Built entirely on top of the native asynchronous Web Crypto API framework calculating strict hash arrays.
