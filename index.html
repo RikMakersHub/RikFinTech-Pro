@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RikFinTech-Pro Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Dashboard Header Panel -->
+        <header>
+            <h1>💳 RikFinTech-Pro</h1>
+            <p>Ecosystem Module Core: Client-Side Immutable Micro-Ledger & Spending Analytics</p>
+        </header>
+
+        <!-- Tool Module 1: Immutable Micro-Ledger Structure -->
+        <div class="fintech-card">
+            <h2>
+                🔒 1. Local Cryptographic Micro-Ledger Pool 
+                <span class="badge badge-secure">Web Crypto SHA-256</span>
+                <span class="badge badge-verified" id="chain-status">Verified Chain</span>
+            </h2>
+            
+            <div class="input-grid">
+                <!-- ADDED BACK SENDER INPUT BOX TO STOP RUNTIME JS CRASHES -->
+                <input type="text" id="sender" placeholder="Sender Destination Entity">
+                <input type="text" id="receiver" placeholder="Receiver Destination Entity">
+                <input type="number" id="tx-amount" placeholder="Transaction Amount (INR)">
+                <button onclick="triggerTransaction()">Commit Block</button>
+            </div>
+
+            <div class="telemetry-output" id="ledger-log">System initialized offline... Genesis block verified.</div>
+        </div>
+
+        <!-- Tool Module 3: System Spend Analytics Engine -->
+        <div class="fintech-card">
+            <h2>
+                📈 3. Resource Allocation & Spending Velocity Matrix
+                <span class="badge badge-active">Real-Time Parsing</span>
+            </h2>
+
+            <div class="input-grid">
+                <select id="expense-cat">
+                    <option value="Investment">Capital Reinvestment</option>
+                    <option value="Production">Hardware Component Production</option>
+                    <option value="Utilities">Infrastructure Utilities</option>
+                    <option value="Overheads">Operational Overheads</option>
+                </select>
+                <input type="number" id="exp-amount" placeholder="Expense Amount (INR)">
+                <button onclick="triggerExpense()">Log Metrics</button>
+            </div>
+
+            <!-- Quantitative Summary Analytics Framework Grid -->
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <span>Total Capital Exhausted</span>
+                    <var id="total-spent">₹0</var>
+                </div>
+                <div class="stat-box">
+                    <span>Ecosystem Burn Velocity</span>
+                    <var id="burn-rate">0%</var>
+                </div>
+                <div class="stat-box" style="grid-column: span auto;">
+                    <span>Optimization Advisory Stream</span>
+                    <p id="financial-advice" style="font-size: 0.85rem; color: #58a6ff; margin-top: 4px; font-weight: 500;">Awaiting localized execution sequences...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wireframe Execution Pipelines -->
+    <script src="app.js"></script>
+    <script src="analytics.js"></script>
+    <script>
+        // Execution hooks linking UI to your logic systems
+  async function triggerTransaction() {
+    const sElement = document.getElementById('sender');
+    const rElement = document.getElementById('receiver');
+    const aElement = document.getElementById('tx-amount');
+
+    const s = sElement ? (sElement.value || 'System Node') : 'System Node';
+    const r = rElement ? (rElement.value || 'External Sink') : 'External Sink';
+    const a = aElement ? (parseFloat(aElement.value) || 0) : 0;
+    
+    // Process block logic
+    const block = await RikLedger.addTransaction(s, r, a);
+    const isValid = await RikLedger.validateLedger();
+    
+    // Re-render local ledger
+    RikLedger.renderAllLocalBlocks();
+    
+    // AUTOMATIC INPUT WIPER FIELDS SETUP
+    if (sElement) sElement.value = '';
+    if (rElement) rElement.value = '';
+    if (aElement) aElement.value = '';
+
+    const statusBadge = document.getElementById('chain-status');
+    if(isValid) {
+        statusBadge.innerText = "Verified Chain";
+        statusBadge.className = "badge badge-verified";
+    } else {
+        statusBadge.innerText = "Data Tampered Alert";
+        statusBadge.className = "badge";
+        statusBadge.style.backgroundColor = "#ff3333";
+    }
+}
+
+        function triggerExpense() {
+            const cat = document.getElementById('expense-cat').value;
+            const amt = parseFloat(document.getElementById('exp-amount').value) || 0;
+            ExpenseAnalytics.addExpense(cat, amt);
+        }
+    </script>
+</body>
+</html>
+
