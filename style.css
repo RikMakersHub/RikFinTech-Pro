@@ -1,8 +1,7 @@
 /* ==========================================================================
-   RikFinTech-Pro - Complete Production Theme Stylesheet (Midnight Matrix)
+   RikFinTech-Pro - Core Brand Theme Pipeline Stylesheet (Pro Matrix Canvas)
    ========================================================================== */
 
-/* 1. Reset & Global System Properties */
 * {
     margin: 0;
     padding: 0;
@@ -10,172 +9,167 @@
 }
 
 body {
-    background-color: #0d1117; /* Deep GitHub Midnight base */
-    color: #c9d1d9;            /* Crisp off-white functional text */
+    background-color: #0b132b; /* Deep core midnight-blue background */
+    color: #f0f6fc;            /* Bright high-contrast text contrast */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    padding: 30px 15px;
-    line-height: 1.6;
+    padding: 40px 20px;
+    line-height: 1.5;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 940px;
     margin: 0 auto;
 }
 
-/* 2. Professional Core Brand Typography Header */
+/* Header Typography Elements */
 header {
-    margin-bottom: 35px;
-    border-bottom: 1px solid #21262d;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #1c2541;
+    padding-bottom: 24px;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 600;
-    color: #f0f6fc;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
 }
 
 header p {
-    font-size: 0.95rem;
-    color: #8b949e; /* Muted gray for project metadata */
-    margin-top: 4px;
+    font-size: 1rem;
+    color: #8b949e;
+    margin-top: 6px;
 }
 
-/* 3. The Interactive Metric Studio Panels */
+/* System Card Block Structural Containers */
 .fintech-card {
-    background-color: #161b22; /* Elevated darker card background layer */
-    border: 1px solid #30363d; /* Distinct divider line metrics */
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff; /* Clean white canvas layout profile container */
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    color: #24292e;            /* Deep text color swap inside content arrays */
+    transition: transform 0.2s ease;
 }
 
 .fintech-card h2 {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #f0f6fc;
-    margin-bottom: 16px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2328;
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
 }
 
-/* 4. Premium Dashboard Form Layout System (Grid Spacing Optimization) */
+/* Inputs, Dropdowns & Functional Component Grids */
 .input-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
     margin-bottom: 20px;
-    align-items: center;
 }
 
-/* Upgraded Input Text Padding and Focus States */
 input, select {
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    color: #f0f6fc;
-    padding: 12px 16px; /* Increased breathing room inside the textboxes */
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    color: #24292e;
+    padding: 12px 16px;
     font-size: 0.9rem;
-    border-radius: 6px;
+    border-radius: 8px;
     outline: none;
-    width: 100%; /* Spans full cell allocation safely */
-    transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
-                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    font-weight: 500;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 input:focus, select:focus {
-    border-color: #58a6ff; /* Focus highlight state color */
-    box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.15); /* Soft premium focus halo ring */
+    border-color: #0077b6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
 }
 
-/* High-Finish Modern Commit Buttons with Click Bounce */
+/* High-Impact Action Buttons */
 button {
-    background-color: #238636; /* Commit green functional primary button */
-    border: 1px solid #2ea44f;
+    background: #0077b6; /* High impact ocean blue primary button container */
+    border: 1px solid #0096c7;
     color: #ffffff;
     padding: 12px 24px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
-    min-height: 46px; /* Matches perfectly with padded inputs */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 46px;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
-    background-color: #2ea44f;
+    background-color: #0096c7;
 }
 
 button:active {
-    transform: scale(0.98); /* Tactile click bounce response feedback */
+    transform: scale(0.98);
 }
 
-/* 5. Custom Status Badges & Pill Indicators */
+/* Dynamic Performance Status Pills */
 .badge {
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
 }
 
-.badge-secure { background-color: rgba(56, 139, 253, 0.15); color: #58a6ff; border: 1px solid rgba(56, 139, 253, 0.4); }
-.badge-verified { background-color: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid rgba(46, 160, 67, 0.4); }
-.badge-active { background-color: rgba(218, 165, 32, 0.15); color: #d4af37; border: 1px solid rgba(218, 165, 32, 0.4); }
+.badge-secure   { background-color: #e3f2fd; color: #1565c0; }
+.badge-verified { background-color: #e8f5e9; color: #2e7d32; }
+.badge-active   { background-color: #fff8e1; color: #f57f17; }
 
-/* 6. Dynamic System Telemetry Output Boxes */
+/* System Terminal Output Simulation Log Blocks */
 .telemetry-output {
-    background-color: #010409; /* Deep terminal black container */
-    border: 1px solid #21262d;
-    border-radius: 6px;
-    padding: 16px;
+    background-color: #0f172a; /* Midnight terminal matrix canvas */
+    border-radius: 8px;
+    padding: 18px;
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     font-size: 0.85rem;
-    color: #7ee787; /* Clean green compiler terminal text output look */
+    color: #38bdf8;            /* High-visibility electric cyan character stream */
     max-height: 250px;
     overflow-y: auto;
     white-space: pre-wrap;
-    line-height: 1.6;
+    border-left: 4px solid #0077b6;
 }
 
-/* 7. UI Statistics & Budget Summary Grid */
+/* Financial Statistics Dashboard Row Grid */
 .stat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .stat-box {
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    padding: 14px;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 .stat-box span {
     display: block;
-    font-size: 0.8rem;
-    color: #8b949e;
+    font-size: 0.75rem;
+    color: #57606a;
     text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
 }
 
 .stat-box var {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #f0f6fc;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2328;
     font-style: normal;
-    font-family: monospace;
 }
 
