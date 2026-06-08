@@ -21,7 +21,7 @@ Cloning the repository to an offline local workstation links the native, multith
    ```bash
    java Server
    ```
-** COME CHECK IT OUT IN:** 
+**COME CHECK IT OUT IN**: [RikFinTech-Pro](https://rikmakershub.github.io/RikFinTech-Pro/)
 
 ## 🛡️ Digital Security Core Features
 * **Cryptographic Block Assurance**: Built entirely on top of the native asynchronous Web Crypto API framework calculating strict hash arrays.
